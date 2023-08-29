@@ -21,10 +21,12 @@ public class DataGenerator
                     Name="OpenHaimer",
                     Year= "2023",
                     Genre="Science Fiction",
-                    Director="Christopher Nolan",
+                    Director=""
 
                 }
             );
+
+            
 
             context.SaveChanges();
         }

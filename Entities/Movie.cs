@@ -13,4 +13,6 @@ public class Movie
 
     public List<Actor> Actors { get; set; }
     public decimal Price { get; set; }
+
+    public bool Status { get; set; }
 }

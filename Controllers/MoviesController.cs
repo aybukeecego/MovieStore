@@ -1,6 +1,9 @@
 using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using MovieStore.Aplication.MovieOperation.Commands.CreateMovie;
+using MovieStore.Aplication.MovieOperation.Commands.DeleteMovie;
+using MovieStore.Aplication.MovieOperation.Commands.UpdateMovie;
 using MovieStore.Aplication.MovieOperation.Queries.GetMovies;
 using MovieStore.Aplication.MovieOperation.Queries.GetMoviesDetail;
 using MovieStore.DbOperations;
@@ -40,6 +43,45 @@ public class MoviesController : ControllerBase
         var result=query.Handle();
         return Ok(result);
 
+    }
+    [HttpPost]
+
+    public IActionResult AddMovie([FromBody] CreateMovieCommandModel newMovie)
+    {
+        CreateMovieCommand command=new CreateMovieCommand(_mapper,_context);
+        command.Model=newMovie;
+        CreateMovieCommandValidation validator= new CreateMovieCommandValidation();
+        validator.ValidateAndThrow(command);
+
+        command.Handle();
+        return Ok();
+
+    }
+    [HttpPut ("{id}")]
+
+    public IActionResult UpdateMovie(int id, [FromBody] UpdateMovieCommandModel updateMovie)
+    {
+        UpdateMovieCommand command= new UpdateMovieCommand(_context);
+        command.movieId=id;
+        command.Model=updateMovie;
+        UpdateMovieCommandValidation validator= new UpdateMovieCommandValidation();
+        validator.ValidateAndThrow(command);
+
+        command.Handle();
+        return Ok();
+    }
+
+    [HttpDelete("{id}")]
+
+    public IActionResult DeleteMovie(int id)
+    {
+        DeleteMovieCommand command =new DeleteMovieCommand(_context);
+        command.movieId=id;
+        DeleteMovieCommandValidation validator= new DeleteMovieCommandValidation();
+        validator.ValidateAndThrow(command);
+        command.Handle();
+
+        return Ok();
     }
 
 }
