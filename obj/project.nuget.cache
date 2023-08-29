@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hzDmGo//+Eth+dX6lT8utXYdnKZQYj6PhgtPN7lwvgY2ADdiks0GronSr3uFggDXCRtolUzylpfNjyHyHpsO+w==",
+  "dgSpecHash": "DLYcciFaeIYLNLlnbcAex8X24YmIykBSWhgBEc74q7PKLJNowgdqwEJzBmsWudKGDqgDkCaaV/dFK6kG2Nc6Xw==",
   "success": true,
-  "projectFilePath": "D:\\Projeler\\MovieStore\\MovieStore\\MovieStore.csproj",
+  "projectFilePath": "d:\\Projeler\\MovieStore\\MovieStore\\MovieStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pamuk\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\pamuk\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
